@@ -1,0 +1,1 @@
+2021/03/15 22:19:00 [error] 30#30: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.220.1, server: iketo.io, request: "GET / HTTP/1.1", upstream: "fastcgi://192.168.220.2:9000", host: "localhost"

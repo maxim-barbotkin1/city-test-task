@@ -1,0 +1,244 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A simple API for Cities forecast detail",
+    "version": "1.0.0",
+    "title": "Cities forecast API"
+  },
+  "host": "api.musement.com/",
+  "basePath": "api/v3/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/cities/{cityId}/forecast": {
+      "get": {
+        "description": "Returns a city item with forecast",
+        "parameters": [
+          {
+            "name": "cityId",
+            "in": "path",
+            "description": "city id for get specific city",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "date for show forecast for specific date",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully added forecast",
+            "schema": {
+              "$ref": "#/definitions/inline_response_200"
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "$ref": "#/definitions/inline_response_400"
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity",
+            "schema": {
+              "$ref": "#/definitions/inline_response_400"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "add forecast for city",
+        "parameters": [
+          {
+            "name": "cityId",
+            "in": "path",
+            "description": "city id for get specific city",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "date",
+            "description": "date for add specific forecast",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "top": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "meta_description": {
+                  "type": "string"
+                },
+                "meta_title": {
+                  "type": "string"
+                },
+                "headline": {
+                  "type": "string"
+                },
+                "more": {
+                  "type": "string"
+                },
+                "weight": {
+                  "type": "integer"
+                },
+                "latitude": {
+                  "type": "integer"
+                },
+                "longitude": {
+                  "type": "integer"
+                },
+                "country": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "cover_image_url": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "activities_count": {
+                  "type": "integer"
+                },
+                "time_zone": {
+                  "type": "string"
+                },
+                "list_count": {
+                  "type": "integer"
+                },
+                "venue_count": {
+                  "type": "integer"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "forecast": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully added a forecast",
+            "schema": {
+              "$ref": "#/definitions/inline_response_200"
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "schema": {
+              "$ref": "#/definitions/inline_response_400"
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity",
+            "schema": {
+              "$ref": "#/definitions/inline_response_400"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "inline_response_200": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "top": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "meta_description": {
+          "type": "string"
+        },
+        "meta_title": {
+          "type": "string"
+        },
+        "headline": {
+          "type": "string"
+        },
+        "more": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer"
+        },
+        "latitude": {
+          "type": "integer"
+        },
+        "longitude": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "object",
+          "properties": {}
+        },
+        "cover_image_url": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "activities_count": {
+          "type": "integer"
+        },
+        "time_zone": {
+          "type": "string"
+        },
+        "list_count": {
+          "type": "integer"
+        },
+        "venue_count": {
+          "type": "integer"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "forecast": {
+          "type": "object",
+          "properties": {}
+        }
+      }
+    },
+    "inline_response_400": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
