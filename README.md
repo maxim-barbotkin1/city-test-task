@@ -1,3 +1,7 @@
+- name : Maxim
+- surname : Barbotkin
+- company: Jagaad
+
 ## installation guide
 - git clone
 - for start docker run cd docker/ && docker-compose build && docker-compose up
